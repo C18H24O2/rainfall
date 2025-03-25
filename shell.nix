@@ -6,5 +6,6 @@ pkgs.mkShell {
   nativeBuildInputs = with pkgs; [
     nmap
     qemu
+    ghidra-bin
   ];
 }

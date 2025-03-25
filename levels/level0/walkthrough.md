@@ -1,4 +1,4 @@
-> level0 walkthrough
+# level0 walkthrough
 
 We are given a suid binary, which seems to segfault when run:
 

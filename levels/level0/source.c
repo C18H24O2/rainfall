@@ -1,11 +1,13 @@
 // vim: set ft=c:
 
+#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <stdio.h>
 
 int main(int argc, char **argv)
 {
+	// The real program does not check if argc is 1, so this does segfault
+	// if no argument is provided.
 	const int i = atoi(argv[1]);
 
 	if (i == 423) {

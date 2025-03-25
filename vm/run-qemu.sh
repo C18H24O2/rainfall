@@ -8,4 +8,6 @@ qemu-system-x86_64 \
     -cdrom "$ISO" \
     -enable-kvm \
     -cpu host \
+	-netdev user,id=net0,hostfwd=tcp::2222-:4242 \
+    -device e1000,netdev=net0 \
     -smp 4
