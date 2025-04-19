@@ -10,5 +10,6 @@ pkgs.mkShell {
     nmap
     qemu
     ghidra-bin
+    gdb
   ];
 }
