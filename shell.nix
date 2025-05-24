@@ -11,5 +11,6 @@ pkgs.mkShell {
     qemu
     ghidra-bin
     gdb
+    sshpass
   ];
 }
