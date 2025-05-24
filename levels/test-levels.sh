@@ -18,9 +18,9 @@ function test() {
 		return
 	fi
 	echo -n "Testing $lvl flag..."
-	FLAG=$(cat $lvl/flag)
+	local flag=$(cat $lvl/flag)
 	local next=$2
-	SSHPASS="$FLAG" sshpass -e ssh $next@$IP -p 4242 "exit" >/dev/null 2>&1
+	SSHPASS="$flag" sshpass -e ssh $next@$IP -p 4242 "exit" >/dev/null 2>&1
 	if [ $? -ne 0 ]; then
 		echo " KO"
 		return
