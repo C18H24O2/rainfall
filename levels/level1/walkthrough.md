@@ -2,7 +2,7 @@
 
 We are given a `level1` suid binary, which is a simple C program that awaits for input and then exits.
 
-By dumping the binary with `objdump`, we can see it has a `main` function, as well as a `run` function. See [source.c](./source.c) for more information.
+By dumping the binary with `objdump`, we can see it has a `main` function, as well as a `run` function. See [source.c](./source.c) for more information (compile with `-fno-stack-protector`).
 
 The `main` function has a `gets` call, while the `run` function has a call to `system("/bin/sh")`; the goal of this level is to hijack our way into the `run` function.
 
