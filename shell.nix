@@ -20,4 +20,13 @@ pkgs.mkShell {
     python2
     python312
   ];
+
+  buildInputs = [
+    (pkgs.writeScriptBin "nuke-amd-kvm" ''
+      #!${pkgs.stdenv.shell}
+      set -euo pipefail
+      sudo rmmod kvm-amd
+      sudo rmmod kvm
+    '')
+  ];
 }
