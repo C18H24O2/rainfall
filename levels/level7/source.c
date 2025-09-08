@@ -4,27 +4,27 @@
 
 char c[80];
 
-typedef struct astruct {
-    struct astruct *next;
+typedef struct t_list {
+    struct t_list *next;
     int value;
-} astruct;
+} t_list;
 
 int main(int argc,char **argv)
 
 {
-  astruct *first;
-  astruct *second;
-  astruct *third;
-  astruct *fourth;
+  t_list *first;
+  t_list *second;
+  t_list *third;
+  t_list *fourth;
   FILE *__stream;
   
-  first = (astruct *)malloc(8);
+  first = (t_list *)malloc(8);
   first->value = 1;
-  second = (astruct *)malloc(8);
+  second = (t_list *)malloc(8);
   first->next = second;
-  third = (astruct *)malloc(8);
+  third = (t_list *)malloc(8);
   third->value = 2;
-  fourth = (astruct *)malloc(8);
+  fourth = (t_list *)malloc(8);
   third->next = fourth;
   strcpy((char *)first->next,argv[1]);
   strcpy((char *)third->next,argv[2]);

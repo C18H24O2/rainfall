@@ -22,5 +22,5 @@ int main(int argc,char **argv)
     func = (void (**)(void *, int, char *, int, int))malloc(4);
     *func = m;
     strcpy(dst,argv[1]);
-    (**func)(NULL, 0, NULL, 0, 0);;
+    (**func)(NULL, 0, NULL, 0, 0);
 }
