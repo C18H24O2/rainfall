@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-void main(void)
+char *gets(char *s);
+
+int main(void)
 {
     char buffer [76];
     unsigned int value;
@@ -9,10 +12,9 @@ void main(void)
     fflush(stdout);
     gets(buffer);
     if ((value & 0xb0000000) == 0xb0000000) {
-        printf("(%p)\n",value);
+        printf("(%p)\n", value);
         exit(1);
     }
     puts(buffer);
     strdup(buffer);
-    return;
 }

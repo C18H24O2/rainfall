@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// Compile with -Wno-format-security
+
 int m = 0;
 
-void main(void)
+int main(void)
 {
 	char buffer[520];
 
@@ -14,5 +16,4 @@ void main(void)
 		fwrite("Wait what?!\n", 1, 0xc, stdout);
 		system("/bin/sh");
 	}
-	return;
 }

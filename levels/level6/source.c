@@ -9,7 +9,7 @@ void m(void *param_1,int param_2,char *param_3,int param_4,int param_5)
   return;
 }
 
-void main(int argc,char **argv)
+int main(int argc,char **argv)
 {
     char *dst;
     void (**func)(void *, int, char *, int, int);
@@ -19,5 +19,4 @@ void main(int argc,char **argv)
     *func = m;
     strcpy(dst,argv[1]);
     (**func)(NULL, 0, NULL, 0, 0);;
-    return;
 }

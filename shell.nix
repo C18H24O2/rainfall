@@ -18,7 +18,9 @@ pkgs.mkShell {
     gdb
     sshpass
     python2
+    clang-tools
     python312
+    efm-langserver
   ];
 
   buildInputs = [
