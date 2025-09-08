@@ -1,0 +1,7 @@
+In this level, we will exploit the printf() command to modify the value
+of the global int "m" by putting a payload in the buffer string :
+The payload consist of :
+- The address of the global
+- We put the %p flag of printf to jump the first 3 arguments so that the address of m comes first
+- We then put padding to have a total value of 64
+- We then use the %n flag so that the value is set to the address of m
