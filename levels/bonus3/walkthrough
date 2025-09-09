@@ -1,0 +1,17 @@
+./bonus3
+Nothing happens
+./bonus3 "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+Nothing happens
+./bonus3 "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+Nothing happens
+./bonus3 ""
+Nothing happ...
+```bash
+$ zhoami
+sh: 1: zhoami: not found
+$ whoami
+end
+```
+
+That's what it's like to be an OSINT TailsOS custom tailored firmware Mullvad Metamask wallet hacker with rasperry pi router, kali linux and encrypted drive and no IntelIME Driver
+🤓🤓🤓🤓
