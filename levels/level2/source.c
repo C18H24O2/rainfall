@@ -7,12 +7,11 @@ char *gets(char *s);
 int main(void)
 {
     char buffer [76];
-    unsigned int value;
     
     fflush(stdout);
     gets(buffer);
-    if ((value & 0xb0000000) == 0xb0000000) {
-        printf("(%p)\n", value);
+    if (((unsigned int)__builtin_return_address(0) & 0xb0000000) == 0xb0000000) {
+        printf("(%p)\n", __builtin_return_address(0));
         exit(1);
     }
     puts(buffer);

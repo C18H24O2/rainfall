@@ -22,6 +22,7 @@ print("'")
 
 args = "./bonus2 aAaBaCaDaEaFaGaHaIaJaKaLaMaNaOaPaQaRaSaTaUaVaWaXaYaZ bAbBbCbDbEbFbGbHbI$'"
 print(args, end="")
+
 args = p(0xbffffebc + 50)
 for c in args:
     if printable(c):
