@@ -8,7 +8,7 @@ int main(int argc, char **argv)
 	int i;
 
 	i = atoi(argv[1]);
-	if (i < 100)
+	if (i < 10)
 	{
 		memcpy(buffer, argv[2], i * 4);
 		if (i == 1464814662)
