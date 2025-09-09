@@ -1,0 +1,19 @@
+In this level, we have a program in c++, a main taking one argument
+and a class N, N have an int and a string annotation, 
+two operator overload and a setAnnotation() method.
+
+Our solution will consist to overwrite the vtable of the
+operator+ to start our shellcode instead with the
+```return *x + *y;```
+For that, using the setAnnotation() method, we can exploit
+the memcpy() in it to overflow to the vtable, the payload consist of :
+- The address of our shellcode (buffer+8)
+- The shellcode
+- Padding to be at (buffer +108, the location of the vtable of operator+)
+- The address of our address of our shellcode (buffer+4)
+
+When *x + *y is reached, it goes into the vtable, which point to
+the address of the address of the shellcode, which leads to....
+our shellcode !
+
+we then grab our flag using the shell :)
