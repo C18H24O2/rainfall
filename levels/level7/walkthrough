@@ -1,0 +1,8 @@
+In this level, we have a structure "t_list", being a chained list.
+four t_list are being declared, first having second as his next element
+and third having fourth as his next element.
+argv[1] and 2 are being copied into first->next and third->next (being second and fourth)
+we can overflow outside of the malloced space to edit the got and replace
+it with another address.
+The default behavior of the program is putting the flag in the "c" global string, or crashing if we don't give it at least 2 argv.
+

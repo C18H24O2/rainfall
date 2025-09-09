@@ -1,0 +1,14 @@
+In this level, we have an "auth system".
+The vulnerability of this program is an use after free.
+At the start, our input is captured inside of the string "line"
+we have 4 possible inputs :
+- "auth" : malloc(4) the char* auth string and set it to zeroes
+- "reset" : free(auth)
+- "service": strdup() our input inside of char* service
+- "login" : if "auth" isn't NULL, open a shell
+The exploit is very simple :
+./level8 :
+We type "auth a" to have auth set at an adress
+We then type "reset" to free the pointer, auth keeps it's value but to an unallocated section
+We then type "service aaaaaaaaaaaaaaaa", doing strdup(a...), since strdup uses malloc(), it allocate to the previously freed section
+We finish ny "login", char *auth now pointing to "a", being non-null, we get a shell
